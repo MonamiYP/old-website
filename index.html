@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Monami</title>
+        <link rel='stylesheet' type="text/css" href="css/index.css">
+        <link rel='stylesheet' type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!--Keeping objects like header and footer same across all pages-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $("#nav_placeholder").load("assets/navbar.html");
+            });
+        </script>
+        
+    </head>
+    
+    <body>
+        <!--Paste this across all web pages-->
+        <header id="nav_placeholder"></header>
+        <!-- Rainbow scroll bar -->
+        <div id="progressbar"></div>
+        <div id="scrollPath"></div>
+        
+        <!--Home page top banner-->
+        <section class="banner" id="banner">
+            <div class="text">
+                <h2>Hello</h2>
+                <p>I'm Monami Yoshioka, welcome to my website</p>
+            </div>
+            <img src="images/Bubbles3.png" id="bubbles3">
+            <img src="images/Bubbles2.png" id="bubbles2">
+            <img src="images/Bubbles1.png" id="bubbles1">
+        </section>
+        
+        <!--About section-->
+        <section class="about" id="about">
+            <div class="content">
+                <div class="image">
+                    <img src="images/Monami.jpg">
+                </div>
+                <div class="text">
+                    <h3>About</h3>
+                    <p>Hello, my name is Monami Yoshioka. Welcome to my website.<br><br>I'm a first year university student studying General Engineering. I created this website to keep my research and projects in one place. Most of the content is engineering and physics related, so hopefully some things in this website will be of interest to you if you are passionate about that sort of stuff too.<br><br>Feel free to contact me if you have any feedback on things I could do to improve what I already have as well as ideas for future projects, or if you just want to have a chat.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!--My Work section-->
+        <section class="myWork" id="myWork">
+            <h3>My Work</h3>
+            <div class="content">
+                <div class="box">
+                    <div class="image">
+                        <img src="images/CodingProjects.jpg">
+                    </div>
+                    <div class="text">
+                        <h4>Software Projects</h4>
+                        <p>A showcase of coding projects I have done in various programming languages.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/OtherProjects.JPG">
+                    </div>
+                    <div class="text">
+                        <h4>Other Projects</h4>
+                        <p>Other projects which include electronics (e.g. Arduino) and CAD.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="images/Research.JPG">
+                    </div>
+                    <div class="text">
+                        <h4>Research</h4>
+                        <p>Info dump of things I found interesting, mostly related to physics or engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--Contact details-->
+        <section class="contact" id="contact">
+            <div class="content">
+                <h3>Contact</h3>
+                <p>Please don't hesitate to contact me using the form provided. Any feedback will be highly appreciated, as well as ideas for future projects.</p>
+            </div>
+            <div class="contact-form">
+                <form action="https://formsubmit.co/monami.yoshioka@gmail.com" method="POST">
+                    <input type="hidden" name="_next" value="https://monamiyp.github.io/thanks.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    <div class="input-box">
+                        <input type="text" name="name" required="required">
+                        <span>Name</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="email" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="message" required="required">
+                        <span>Type your message...</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <!--Footer-->
+        <section class="footer" id="footer">
+            <div class="copyright">
+                <p>Monami Yoshioka - 2021</p>
+            </div>
+            <div class="social">
+                <a href="https://www.instagram.com/monami.myp/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/monami.myp" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto: monami.yoshioka@gmail.com"><i class="fa fa-envelope"></i></a>
+                <a href="https://github.com/MonamiYP" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+        
+        <!--Javascript-->
+        <script src="script.js"></script>
+    </body>
+</html>
