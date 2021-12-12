@@ -1,3 +1,26 @@
+.content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 h2 {
     color: #fff;
+    text-align: center;
+    padding-bottom: 30px;
+    font-weight: 500;
+    font-size: 30px;
+}
+button {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
 }
