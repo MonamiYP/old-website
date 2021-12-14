@@ -15,11 +15,12 @@ h4 {
     font-size: 18px;
 }
 .content .paragraph .text {
-    
+    font-weight: 400;
 }
 .content .paragraph .text h5 {
     font-size: 16px;
 }
 .content .paragraph a {
     text-decoration: none;
+    color: inherit;
 }
