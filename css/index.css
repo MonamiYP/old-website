@@ -121,6 +121,9 @@
 .myWork .text {
     padding-left: 20px;
 }
+.myWork a{
+    text-decoration: none;
+}
 
 
 /* Contact section */

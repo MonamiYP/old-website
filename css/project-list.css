@@ -20,3 +20,6 @@ h4 {
 .content .paragraph .text h5 {
     font-size: 16px;
 }
+.content .paragraph a {
+    text-decoration: none;
+}
