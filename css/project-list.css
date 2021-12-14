@@ -1,0 +1,22 @@
+.content .paragraph .box {
+    background: var(--blue);
+    border-radius: 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.content .paragraph .box video {
+    max-width: 200px;
+    margin: 0 20px;
+}
+h4 {
+    text-align: center;
+    font-size: 18px;
+}
+.content .paragraph .text {
+    
+}
+.content .paragraph .text h5 {
+    font-size: 16px;
+}

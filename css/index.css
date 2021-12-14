@@ -195,36 +195,6 @@
     font-size: 18px;
 }
 
-/* Footer */
-.footer {
-    background: #111;
-    padding: 20px 0;
-}
-.footer .social {
-    text-align: center;
-    padding-top: 10px;
-}
-.footer .social a {
-    color: #fff;
-    font-size: 25px;
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    align-items: center;
-    margin: 0 10px;
-    opacity: 0.75;
-}
-.footer .social a:hover {
-    opacity: 1;
-}
-.footer p {
-    color: #fff;
-    opacity: 0.75;
-    text-align: center;
-    font-weight: 100;
-    font-size: 14px;
-}
-
 /* Different media styles */
 @media (max-width: 1000px) {
     .about {
