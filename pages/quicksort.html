@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>QuickSort</title>
+        <link rel='stylesheet' type="text/css" href="../css/style.css">
+        <link rel='stylesheet' type="text/css" href="../css/blogs.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!--Keeping objects like header and footer same across all pages-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $("#nav_placeholder").load("../assets/navbar.html");
+                $("#footer_placeholder").load("../assets/footer.html");
+            });
+        </script>
+    </head>
+    
+    <body>
+        <!--Paste this across all web pages-->
+        <header id="nav_placeholder"></header>
+        <!-- Rainbow scroll bar -->
+        <div id="progressbar"></div>
+        <div id="scrollPath"></div>
+        
+        
+        <section class="content">
+            <h3>Visualising the Quick Sort algorithm</h3>
+            <div class="paragraph">
+                <h4>What is Quick Sort?</h4>
+                <p>Quick Sort is a highly efficient sorting algorithm, developed by British computer scientist Tony Hoare in 1959. It works by selecting a 'pivot' element and creating two sub-arrays with all the elements bigger than the pivot on one, and smaller on the other. The sub-arrays are then sorted recursively.<br><br>This algorithm is quite efficient for large data sets as its average and worst-case complexities are O(nLogn) and O(n^2) respectively, although the worst case scenarios are rare.</p>
+            </div>
+            <div class="paragraph">
+                <h4>How it works:</h4>
+                <ol>
+                    <li>Pick an element from the array. This will be the pivot. There are many ways to choose the pivot: selecting the first element, the last, randomly, median... In this example I will choose the first element.</li>
+                    <li>Partition: reorder the array so that all the elements with values less than the pivot come before the pivot while all the elements with values greater than the pivot come after it. After the partitioning, the pivot will be in its final position.</li>
+                    <li>Recursively apply the above steps to each sub-array of elements.</li>
+                </ol>
+                <figure class="images">
+                    <img src="../images/Blogs/quicksort_flow.png" id="flow_chart">
+                    <figcaption>Flow chart of the Quick Sort algorithm</figcaption>
+                </figure>
+            </div>
+            <div class="paragraph">
+                <h4>Code:</h4>
+                <p>Check out my code on GitHub: <a href="https://github.com/MonamiYP/Sorting-Algorithms">Quick Sort</a><br><br>There are two main functions in the code which do the actual sorting: partition() and quick_sort(). For the visualisation I decided to represent different numbers with bar heights as it's simple and easy to understand. I used the Pygame library for the GUI. More in depth explanation can be found in the comments in the code.</p>
+            </div>
+            <div class="paragraph">
+                <h4>Results:</h4>
+                <ul>
+                    <li>Orange - to be sorted</li>
+                    <li>Red - the bar that is currently being evaluated</li>
+                    <li>Yellow - bars that are going to swap</li>
+                    <li>Blue - pivots (at the ends). Anything shorter than the blue bar is sorted into a new sub-array and placed to the left of the pivot.</li>
+                    <li>Green - sorted</li>
+                </ul>
+                <br>
+                <div class="video">
+                    <p>Example 1:</p>
+                    <video autoplay muted loop>
+                        <source src="../videos/QuickSortSlow.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video">
+                    <p>Example 2:</p>
+                    <video autoplay muted loop>
+                        <source src="../videos/QuickSortFast.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+            </div>
+        </section>
+        
+        <!--Paste this across all web pages-->
+        <!--Footer-->
+        <section class="footer" id="footer_placeholder"></section>
+        <!--Javascript-->
+        <script src="../script.js"></script>
+    </body>
+</html>
