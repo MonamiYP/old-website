@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Double Pendulum</title>
+        <link rel='stylesheet' type="text/css" href="../css/style.css">
+        <link rel='stylesheet' type="text/css" href="../css/blogs.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!--Keeping objects like header and footer same across all pages-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $("#nav_placeholder").load("../assets/navbar.html");
+                $("#footer_placeholder").load("../assets/footer.html");
+            });
+        </script>
+    </head>
+    
+    <body>
+        <!--Paste this across all web pages-->
+        <header id="nav_placeholder"></header>
+        <!-- Rainbow scroll bar -->
+        <div id="progressbar"></div>
+        <div id="scrollPath"></div>
+        
+        <section class="content">
+            <h3>Simulating the Double Pendulum</h3>
+            <div class="subtitle">
+                <a href='https://monamiyp.github.io/pages/software-projects.html'>Go back</a>
+                <p>19/01/2022</p>
+            </div>
+            
+            <div class="paragraph">
+                <h4>Double pendulum and chaos theory:</h4>
+                <p>A double pendulum consists of a pendulum with another pendulum attached to its end, and is a simple physical system that exhibits a dynamic behaviour with strong sensitivity to initial conditions. This is a principle from chaos theory called the butterfly effect, where a small change in one state of a deterministic non-linear system can result in large differences in a later state. Chaos theory also states that within the apparent randomness of complex chaotic systems, there are underlying patterns, constant feedback loops, repetition and fractals.</p>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/AwT0k09w-jw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>Video showing the behaviour of a double pendulum</p>
+                </div>
+                <p>Edward Lorenz is considered as the founder of chaos theory. He used a computer to simulate weather patterns by modelling 12 variables. One day he wanted to see a sequence of data again, and stated a simulation by plugging in the same variables he had previously used. <br><br>To his surprise, the simulation began to predict something completely different from the previous calculation. This was due to using rounded decimal numbers as inputs, because the computer worked with 6-digit precision but he had rounded the variables to 3 decimal points. The difference is tiny, and from this Lorentz realised that small changes in initial conditions resulted in large changes in the long-term outcome.
+                <br><br>
+                Chaos theory was summarised by Lorenz as:
+                <p class="quotation">Chaos: when the present determines the future, but the approximate present does not approximately determine the future.</p>
+                <br>
+                <p>One would think that the motion of the double pendulum, with only two degrees of freedom, would be straightforward to model. However, the motion of a double pendulum is governed by a set of coupled ordinary differential equations.</p>
+                <a href="https://en.wikipedia.org/wiki/Double_pendulum#/media/File:DPLE.jpg">
+                <figure class="images">
+                    <img src="../images/Blogs/double_pendulum.png" id="flow_chart">
+                    <figcaption>Long exposure of double pendulum exhibiting chaotic motion</figcaption>
+                </figure><br></a>
+                <p>I wanted to recreate the above using Python. To simulate the pendulum differential equations have to be solved using numerical methods. I have tried two different methods: Euler's and Runge-Kutta 4 as seen below.</p>
+            </div>
+            <div class="paragraph">
+                <h4>Euler's method:</h4>
+                <figure class="images">
+                    <img src="../images/Blogs/euler_method.png" id="flow_chart">
+                </figure>
+                <p>The Euler's method is a first-order numerical procedure for solving ordinary differential equations. It uses the formula: </p>
+                <div class="maths">
+                    y<sub>n+1</sub> = y<sub>n</sub> + hf<box>(x<sub>n</sub>, y<sub>n</sub>)</box>
+                </div>
+                <p>Where y<sub>n+1</sub> is the next estimates solution value<br>y<sub>n</sub> is the current value<br>h is the interval between the steps<br>f(x<sub>n</sub>, y<sub>n</sub>) is the value of the derivative at the current point</p>
+                <br>
+                <p>Euler's method is only accurate for small h steps and if the funciton does not change too rapidly. Here is the code used to simulate the pendulum using the Euler's method: <a href="https://github.com/MonamiYP/Double-Pendulum/blob/main/Euler.py">Double pendulum simulation using Euler's method</a></p>
+                <br>
+                <div class="video">
+                    <p>PLEASE RE-LOAD THE PAGE IF THE VIDEO IS NOT PLAYING</p><br>
+                    <p>Simulation using Euler's method:</p>
+                    <video playsinline autoplay muted loop>
+                        <source src="../videos/DoublePendulumEuler.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p>Looking at the simulation, we can see obvious things that are wrong with it. For example, the energy of the pendulum seems to be increasing too, as at one particular time, the potential energy of the pendulum is higher than the initial potential energy it had. (This is the point where both of the bobs are at higher points than their respective initial conditions). <br><br>As expected, using the Euler's method resulted in extreme deviations from the true value very rapidly because of the inaccuracies building up exponentially. Therefore, I decided to look for more accurate ways to approximate the differential equations.</p>
+            </div>
+            <div class="paragraph">
+                <h4>Runge-Kutta 4 Method:</h4>
+                <p>The Runge-Kutta is another way to solve differential equations numerically, and is more accurate than the Euler method. It takes x<sub>n</sub> and t<sub>n</sub> and calculates an approximation for x<sub>n+1</sub> at a brief time interval later t<sub>n</sub>+h. The formula is given by:</p>
+                <div class="maths">
+                    x<sub>n+1</sub> = x<sub>n</sub> + h(a + 2b + 2c + d) / 6
+                </div><p>where</p>
+                <div class="maths">
+                    a = f(t<sub>n</sub>, x<sub>n</sub>)<br>
+                    b = f(t<sub>n</sub> + h/2, x<sub>n</sub> + ha/2)<br>
+                    c = f(t<sub>n</sub> + h/2, x<sub>n</sub> + hb/2)<br>
+                    d = f(t<sub>n</sub> + h, x<sub>n</sub> + hc)
+                </div>
+                <p>Here is the code for the Runge-Kutta 4 method: <a href="https://github.com/MonamiYP/Double-Pendulum/blob/main/Runge-Kutta.py">Double pendulum simulation using Runge-Kutta 4</a></p>
+                <div class="video">
+                    <p>Simulation using RK4:</p>
+                    <video playsinline autoplay muted loop>
+                        <source src="../videos/DoublePendulumRK4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p>The simulation shows a much more accurate behaviour of the double pendulum. It behaves like a single pendulum in the beginning but quickly demonstrates chaotic behaviour as time goes on.</p>
+            </div>
+        </section>
+        
+        <!--Paste this across all web pages-->
+        <!--Footer-->
+        <section class="footer" id="footer_placeholder"></section>
+        <!--Javascript-->
+        <script src="../script.js"></script>
+    </body>
+</html>
