@@ -6,6 +6,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 20px 0;
 }
 .content .paragraph .box video {
     max-width: 200px;
@@ -30,7 +31,7 @@ h4 {
     .content .paragraph .box {
         flex-direction: column;
         text-align: center;
-        height: 300px;
+        height: 250px;
         
     }
 }
