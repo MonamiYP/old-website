@@ -5,6 +5,13 @@ body {
 header {
     background: #111;
 }
+.subtitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #555;
+    font-size: 14px;
+}
 .content {
     margin: 150px 50px 50px 50px;
     background: #fff;
@@ -12,7 +19,7 @@ header {
 
 .content h3 {
     text-align: center;
-    padding: 40px 0;
+    padding: 40px 0 10px 0;
     font-weight: 800;
     font-size: 25px;
 }
@@ -23,16 +30,20 @@ header {
 .paragraph h4 {
     padding-bottom: 10px;
 }
+.paragraph .quotation {
+    font-style: italic;
+    text-align: center;
+    font-weight: 300;
+    padding: 14px 0;
+}
 .paragraph img {
     max-width: 500px;
 }
-
 .paragraph .images {
     text-align: center;
     margin: 50px 0 0 0;
 }
-.paragraph figcaption {
-    padding-top: 20px;
+.paragraph figcaption, .content .video {
     color: #555;
     font-size: 14px;
 }
@@ -47,7 +58,17 @@ ul, ol {
 .video video {
     max-width: 550px;
 }
-
+.content .video {
+    text-align: center;
+}
+iframe {
+    width: 560px;
+    height: 315px;
+}
+.maths {
+    text-align: center;
+    margin: 10px 0;
+}
 /* Different media styles */
 @media (max-width: 1000px) {
 
@@ -64,5 +85,8 @@ ul, ol {
     }
     .video video {
         max-width: 85%;
+    }
+    iframe {
+        width: 90%;
     }
 }
