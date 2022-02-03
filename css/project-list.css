@@ -12,6 +12,11 @@
     max-width: 200px;
     margin: 0 20px;
 }
+.list-images {
+    width: 200px;
+    margin: 0 20px;
+    object-fit: contain;
+}
 h4 {
     text-align: center;
     font-size: 18px;
@@ -32,6 +37,9 @@ h4 {
         flex-direction: column;
         text-align: center;
         height: 250px;
-        
     }
+    .list-images {
+        width: 150px;
+        object-fit: contain;
+}
 }

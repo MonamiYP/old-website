@@ -9,8 +9,8 @@ window.addEventListener('scroll', function(){
 
     let value = window.scrollY;
     //stars.style.left = value * 1.5 + 'px';
-    bubbles1.style.top = value * 0.8 + 'px';
-    bubbles2.style.top = value * 0.5 + 'px';
+    bubbles1.style.top = value * 0.5 + 'px';
+    bubbles2.style.top = value * 0.1 + 'px';
     bubbles3.style.top = value * 0.01 + 'px';
 })
 
